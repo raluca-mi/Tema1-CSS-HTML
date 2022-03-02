@@ -1,0 +1,39 @@
+body
+{
+ background-color: #fff4cc;
+}
+
+h3
+{
+	color: #6bb5ff;
+	font-family: "Comic Sans MS";
+	margin:50px;	
+}
+
+.aligned
+{
+	color: black;
+	font-family: "Comic Sans MS";
+	margin-left: 50px;
+	background-color:#fff4cc;		
+}
+
+.button {
+  background-color: #5b99d7;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 3px 1px;
+  cursor: pointer;
+  border-radius: 8px;
+  margin-left: 50px;	
+  border-color: black;
+}
+
+button:hover
+{
+	background-color: purple;
+}
+

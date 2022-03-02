@@ -1,0 +1,45 @@
+<html>
+	<head>
+	<link rel="stylesheet" href="stylesheet.css">
+	</head>
+	
+	<body>
+
+	<h3> My first page </h3>
+	<label class="aligned" for="fname"> First name: </label><br>
+	<input class="aligned" type="text" id="fname" name="fname"><br><br>
+	
+	<label class="aligned" for="lname">Last name:</label><br>
+	<input class="aligned" type="text" id="lname" name="lname"><br><br>
+	
+	<label class="aligned">Age:</label><br>
+		<datalist id="ageList">
+			<option value="under 18">
+			<option value="18-30">
+			<option value="30-45">
+			<option value="over 45">
+		</datalist>
+	<input class="aligned" type="search" list="ageList"><br><br>
+	
+	<label class="aligned">City:</label><br>
+		<datalist id="cityList">
+			<option value="Brasov">
+			<option value="Craiova">
+			<option value="Dolj">
+			<option value="Galati">
+			<option value="Hunedoara">
+			<option value="Iasi">
+			<option value="Cluj">
+			<option value="Oradea">
+		</datalist>
+	<input class="aligned" type="search" list="cityList"><br><br>
+	
+	<label class="aligned" for="description">Describe yourself:</label><br>
+	<textarea class="aligned" id="description" name="description" rows="10" cols="30"></textarea>
+	<br><br>
+	
+	<button class="button">Cancel</button>
+	<button class="button">Submit</button>
+	
+	</body>
+</html>
