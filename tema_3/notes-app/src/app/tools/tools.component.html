@@ -1,0 +1,9 @@
+<p [style.background-color]='auxColor'>
+{{title}} {{onButtonColor}}
+</p>
+
+<input type="text" [(ngModel)]="auxColor"/>
+
+<button mat-icon-button (click)='onButton()'> 
+    <mat-icon>save</mat-icon>
+</button>
