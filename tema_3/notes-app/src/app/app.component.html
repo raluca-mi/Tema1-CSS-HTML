@@ -1,1 +1,18 @@
 <app-tools></app-tools>
+
+ <!-- default pipes and structural directives -->
+<p>Names array (uppercase on even index): </p>
+<div *ngFor="let name of names;let i=index;let evenIndex=even">
+  <div *ngIf=evenIndex>{{name|uppercase}} on index: {{i}}</div>
+</div>
+<br>
+<p>List of birthdays:</p>
+<div *ngFor="let date of birthdays;let i=index;">
+    <p>{{date|date:"shortDate"}}</p>
+</div>
+
+<!-- custom pipe -->
+<p>Persoana {{firstname}} are mail-ul generat automat: {{firstname|mail:surname:age}}</p>
+
+<!-- custom directive -->
+<h1 [appColorText]=color> Color me! </h1>

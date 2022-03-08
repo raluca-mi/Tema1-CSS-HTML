@@ -9,11 +9,15 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToolsComponent } from './tools/tools.component';
+import { MailPipe } from './mail.pipe';
+import { ColorTextDirective } from './color-text.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ToolsComponent
+    ToolsComponent,
+    MailPipe,
+    ColorTextDirective
   ],
   imports: [
     BrowserModule,
