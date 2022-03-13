@@ -50,4 +50,18 @@ export class NoteService {
     return this.notes.filter(nota => nota.categoryId===categoryId)
   }
   
+  addNote(title: string, description: string, filter:string)
+  { 
+    let newNote:Note = {
+      id: "Id"+(this.notes.length+1),
+      title: title,
+      description: description,
+      categoryId: filter,
+      color: "#cc99ff"
+    };
+
+    this.notes.push(newNote);
+    console.log(newNote);
+  }
+  
 }

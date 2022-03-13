@@ -1,9 +1,9 @@
-<body class="add-note-body-form">
-    <h1>Add a note</h1>
+<body class="add-note-body-form"  >
+    <h1 class="title-form">Add a note</h1>
 
     <label>Title</label>
 
-    <form class="add-note-form" name="form" #f="ngForm" novalidate > 
+    <form class="add-note-form" name="form" #f="ngForm" novalidate> 
         <mat-form-field>
            
             <input
@@ -24,6 +24,17 @@
                       #inputDescription="ngModel" [ngClass]="{'is-invalid':f.submitted && inputTitle.invalid}" required></textarea>
         </mat-form-field>
         <br>
-        <button mat-raised-button [disabled]="f.invalid">Add</button>
+       
+        <mat-form-field appearance="outline">
+
+            <mat-label>Select filter</mat-label>
+            <mat-select [(value)]="selected">
+              <mat-option *ngFor="let category of categories" [value]="categories.values">
+               {{category.name}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field><br>
+
+        <button mat-raised-button [disabled]="f.invalid" (click)="AddNote()">Add</button>  
 </body>
   
