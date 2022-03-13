@@ -1,0 +1,25 @@
+<div class="notes-form">
+    <div *ngFor="let note of notes;">   
+        <br>
+        <mat-card class="note-form" [style.background-color]="note.color">
+       
+            <mat-card-header class="title-form">
+                {{note.title}}
+            </mat-card-header>
+  
+            <mat-card-content class="description-form">
+                {{note.description}}
+            </mat-card-content>
+ 
+            <mat-card-footer >
+                <button mat-icon-button ><mat-icon >east</mat-icon></button>
+                <button mat-icon-button><mat-icon >star_half</mat-icon></button>
+                <button mat-icon-button ><mat-icon >done outline</mat-icon></button>               
+                <button mat-icon-button class="right-buttons-form"><mat-icon>edit</mat-icon></button>
+                <button mat-icon-button><mat-icon>delete</mat-icon></button>
+            </mat-card-footer>
+
+        </mat-card>
+        <br>
+    </div>
+</div>

@@ -1,0 +1,52 @@
+.note-form
+{
+    align-items: center;
+    flex-direction: row;
+    justify-content:space-evenly ;
+    width: 200px;
+    height: 200px;
+    word-wrap: break-word;
+}
+
+.notes-form
+{   margin-top: 30px;
+    margin-left: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.title-form
+{
+    text-align: center;
+    font-family:cursive;
+    font-weight: bold;
+    color:rgb(0, 0, 0);
+}
+
+.description-form
+{
+    margin-top: 15px;
+    text-align: left;
+    font-family:cursive;
+    color:rgb(0, 0, 0);
+}
+
+::ng-deep .mat-icon{
+    height:20px !important;
+    width:20px !important;
+    font-size:20px !important;
+    justify-content: center;
+}
+
+.mat-icon-button
+{
+    flex-direction: row;
+    justify-content:space-evenly;
+    margin-top: 80px;
+}
+
+.right-buttons-form{
+    margin-left: 30px;
+}
+

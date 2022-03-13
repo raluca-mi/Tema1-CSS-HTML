@@ -1,0 +1,29 @@
+<body class="add-note-body-form">
+    <h1>Add a note</h1>
+
+    <label>Title</label>
+
+    <form class="add-note-form" name="form" #f="ngForm" novalidate > 
+        <mat-form-field>
+           
+            <input
+                matInput placeholder="Enter your title"
+                name="inputTitle" [(ngModel)]="title"
+                #inputTitle="ngModel" [ngClass]="{'is-invalid':f.submitted && inputTitle.invalid}"  required
+                minlength="4"
+            />
+        </mat-form-field>    
+    </form>
+
+    <div *ngIf="inputTitle.invalid" class="invalid-input"> Please enter a valid title!(min 4 characters) </div>
+
+       <br><label>Description</label><br>
+
+        <mat-form-field>
+            <textarea matInput placeholder="Enter your description" name="inputDescription" [(ngModel)]="description" 
+                      #inputDescription="ngModel" [ngClass]="{'is-invalid':f.submitted && inputTitle.invalid}" required></textarea>
+        </mat-form-field>
+        <br>
+        <button mat-raised-button [disabled]="f.invalid">Add</button>
+</body>
+  
