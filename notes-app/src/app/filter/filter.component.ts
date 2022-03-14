@@ -9,14 +9,16 @@ import { FilterService } from '../services/filter.service';
 })
 export class FilterComponent implements OnInit {
 
+  categories: Category[];
+
 @Output() emitSelectedFilter= new EventEmitter<string>();
 
-categories: Category[];
   constructor(private filterService: FilterService) { }
 
   selectFilter(categoryId: string) {
     this.emitSelectedFilter.emit(categoryId);
   }
+  
   ngOnInit(): void {
     this.categories=this.filterService.getFilters();
   }

@@ -1,4 +1,5 @@
-<body class="add-note-body-form"  >
+<body  class="add-note-body-form">
+    <div id="all">
     <h1 class="title-form">Add a note</h1>
 
     <label>Title</label>
@@ -28,13 +29,17 @@
         <mat-form-field appearance="outline">
 
             <mat-label>Select filter</mat-label>
-            <mat-select [(value)]="selected">
-              <mat-option *ngFor="let category of categories" [value]="categories.values">
-               {{category.name}}
+            <mat-select *ngIf="categories" [(ngModel)]="selected" name="categ">
+              <mat-option *ngFor="let categ of categories" [value]="categ.id">
+               {{categ.name}}
               </mat-option>
+             
             </mat-select>
-          </mat-form-field><br>
+          </mat-form-field>
+        
+        <br>
 
-        <button mat-raised-button [disabled]="f.invalid" (click)="AddNote()">Add</button>  
+        <button mat-raised-button [disabled]="f.invalid" (click)="AddNote()" routerLink="">Add</button>  
+    </div>
 </body>
   

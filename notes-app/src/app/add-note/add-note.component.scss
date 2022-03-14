@@ -1,18 +1,29 @@
 .add-note-form {
     display: flex;
     flex-direction: row;
-    max-width: 300px;     
+    max-width: 300px;   
+
 }
 
-.add-note-body-form
-{
+.add-note-body-form{
     background-color: bisque;
-}
-
+ }
+ 
 .invalid-input
 {   
     color: red;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 10px;
-  
+}
+
+#all
+{
+    margin-left: 600px;
+    background-color: rgb(233, 224, 204);
+    width: 300px;
+    border: 10px solid rgb(207, 174, 102);
+    padding: 50px;
+    font-family:cursive;
+
+      
 }

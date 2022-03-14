@@ -35,7 +35,6 @@ export class NoteService {
 
   serviceCall() {
     console.log("Note service was called");
-    
   }
 
   getNotes() {
@@ -49,7 +48,15 @@ export class NoteService {
     // });
     return this.notes.filter(nota => nota.categoryId===categoryId)
   }
-  
+
+  getSearchedTitle(inputSearch:string)
+  { 
+    if(inputSearch!='')
+    return this.notes.filter(nota => nota.title.includes(inputSearch)||nota.description.includes(inputSearch))
+    else
+    return this.notes;
+  }
+
   addNote(title: string, description: string, filter:string)
   { 
     let newNote:Note = {

@@ -8,15 +8,17 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
 
   categoryId: string;
-  
+  inputSearch: string;
 
   constructor() { }
 
   receiveCategory(categId: string) {
     this.categoryId = categId;
-    console.log(this.categoryId);
   }
 
+  recieveSearch(inputSearch: string) {
+    this.inputSearch = inputSearch;
+  }
 
   ngOnInit(): void {
   }

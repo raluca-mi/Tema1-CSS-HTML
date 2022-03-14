@@ -1,8 +1,8 @@
 <body class="home-form">
 
     <app-filter (emitSelectedFilter)="receiveCategory($event)"></app-filter>
-    <app-note [selectedCategoryId]="categoryId"></app-note>
+    <app-search  (emitSearch)="recieveSearch($event)"></app-search>
+    <app-note [selectedCategoryId]="categoryId" [inputSearch]="inputSearch" ></app-note> 
     <app-tools></app-tools>
     <br>
-
 </body>

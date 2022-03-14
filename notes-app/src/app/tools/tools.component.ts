@@ -15,7 +15,7 @@ export class ToolsComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
   //setTitle() {this.title = "test";}
   setContent() {this.noteContent = "Content modificat din buton.";}
+
 }

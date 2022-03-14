@@ -17,6 +17,7 @@ import { FilterComponent } from './filter/filter.component';
 import { AddNoteComponent } from './add-note/add-note.component';
 import { HomeComponent } from './home/home.component';
 import { DummyComponent } from './dummy/dummy.component';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { DummyComponent } from './dummy/dummy.component';
     FilterComponent,
     AddNoteComponent,
     HomeComponent,
-    DummyComponent
+    DummyComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,

@@ -10,20 +10,21 @@ import { NoteService } from '../services/note.service';
 export class NoteComponent implements OnInit, OnChanges {
 
   notes: Note[];
-  // specifiedColor: string="orange";
 
   @Input() selectedCategoryId: string;
+  @Input() inputSearch: string;
 
   constructor(private noteService: NoteService) { }
 
   ngOnInit(): void {
     this.noteService.serviceCall();
     this.notes=this.noteService.getNotes();
+  
   }
 
   ngOnChanges():void{
-    //console.log(this.selectedCategoryId);
-    this.notes = this.noteService.getFiltredNotes(this.selectedCategoryId);
+    this.notes = this.noteService.getFiltredNotes(this.selectedCategoryId);     
+    //this.notes = this.noteService.getSearchedTitle(this.inputSearch);
   }
 
 }
