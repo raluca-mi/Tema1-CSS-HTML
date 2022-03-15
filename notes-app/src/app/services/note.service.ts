@@ -57,6 +57,11 @@ export class NoteService {
     return this.notes;
   }
 
+  getFiltredByCategTitle(categoryId, inputSearch)
+  {
+    return this.notes.filter(nota => nota.categoryId===categoryId && (nota.title.includes(inputSearch)||nota.description.includes(inputSearch)&&inputSearch!=''))
+  }
+
   addNote(title: string, description: string, filter:string)
   { 
     let newNote:Note = {
