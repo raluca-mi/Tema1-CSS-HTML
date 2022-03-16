@@ -14,7 +14,6 @@ export class DummyComponent implements OnInit {
   ngOnInit(): void {
     this._activatedRoute.params.subscribe(parameter => {console.log(parameter);
     this.dummyId=parameter['id'];})
-
   }
 
 }

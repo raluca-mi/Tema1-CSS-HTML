@@ -20,16 +20,20 @@ export class AddNoteComponent implements OnInit{
   title: string;
   description: string;
   addMode: boolean;
+  notesNumber: string;
 
   categories: Category[];
+  notes: Note[];
 
   constructor(private noteService: NoteService,private filterService: FilterService,
     private _router: Router,private _activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.id = this._activatedRoute.snapshot.params['id'];
+      
+      this.id = this._activatedRoute.snapshot.params['id'];
       this.addMode = !this.id;
       let toEditNote: Note;
+
       if(!this.addMode)
       {this._activatedRoute.params.subscribe(parameter => 
         {
@@ -44,6 +48,10 @@ export class AddNoteComponent implements OnInit{
       );}
       
     this.categories=this.filterService.getFilters();
+
+    //get the current number of notes
+    this.noteService.getNotes().subscribe((notes: Note[])=>{this.notes=notes;});
+    this.notesNumber=this.notes.length.toString();
   }
 
   EditNote(noteId)
@@ -63,6 +71,7 @@ export class AddNoteComponent implements OnInit{
   AddNote()
   {
     const note: Note = {
+      id: "id:"+ (+this.notesNumber+1),
       title: this.title,
  	    description: this.description,
       categoryId: this.selected,

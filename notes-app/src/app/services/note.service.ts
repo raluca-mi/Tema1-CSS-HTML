@@ -15,7 +15,6 @@ export class NoteService {
     })
   };
 
-
   constructor(private httpClient: HttpClient) { }
 
   serviceCall() {
@@ -44,7 +43,7 @@ export class NoteService {
 
   getFilterSearchedNotes(categId:string,inputSearch:string)
   {
-    return this.httpClient.get<Note[]>(this.baseUrl+'/notes', this.httpOptions).pipe(map((notes:Note[])=>notes.filter(nota => (nota.title.includes(inputSearch)||nota.description.includes(inputSearch) && nota.categoryId===categId))));
+    return this.httpClient.get<Note[]>(this.baseUrl+'/notes', this.httpOptions).pipe(map((notes:Note[])=>notes.filter(nota => ((nota.title.includes(inputSearch)||nota.description.includes(inputSearch)) && nota.categoryId===categId))));
   }
 
   addNote(note: Note)
@@ -56,10 +55,11 @@ export class NoteService {
     return this.httpClient.put(this.baseUrl + "/notes/" + noteId, note ,this.httpOptions)
   }
 
-  // deleteNote(noteId:string)
-  // {
-  //   return this.httpClient.get<Note[]>(this.baseUrl+'/notes', this.httpOptions).pipe(map((notes:Note[])=>notes.filter(note => note.id!==noteId)));
-  // }
+
+  deleteNote(noteId:string)
+  {
+    return this.httpClient.delete(this.baseUrl+"/"+noteId, this.httpOptions);
+  }
 
 
   //code before http

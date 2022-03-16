@@ -31,10 +31,12 @@ ngOnChanges(): void {
   this.noteService.getFilterSearchedNotes(this.selectedCategoryId, this.inputSearch).subscribe((notes:Note[])=>this.notes=notes)
 }
 
-// DeleteNote(noteId: string)
-// {
-//   this.noteService.deleteNote(noteId).subscribe((notes:Note[])=>this.notes=notes)
-// }
+  DeleteNote(noteId: string)
+{
+  this.noteService.deleteNote(noteId).subscribe();
+  console.log("note with id: "+noteId+" has been deleted");
+  this.noteService.getNotes().subscribe((notes: Note[])=>{this.notes=notes;});
+}
 
   //code before http
 

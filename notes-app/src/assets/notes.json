@@ -4,84 +4,84 @@
       "title": "First note",
       "description": "This is the description for the first note",
       "categoryId": "1",
-      "color": "#ff9933"
+      "color": "#99bbff"
     },
     {
       "id": "id2",
       "title": "Second note",
       "description": "This is the description for the second note",
       "categoryId": "2",
-      "color": "#ff9933"
+      "color": "#99bbff"
     },
     {
       "id": "id3",
       "title": "Third note",
       "description": "This is the description for the third note",
       "categoryId": "2",
-      "color": "#ff9933"
+      "color": "#99bbff"
     },
     {
       "id": "id4",
       "title": "Fourth note",
       "description": "This is the description for the fourth note",
       "categoryId": "3",
-      "color": "#ff9933"
+      "color": "#99bbff"
     },
     {
       "id": "id5",
       "title": "Fifth note",
       "description": "This is the description for the fifth note",
       "categoryId": "3",
-      "color": "#ff9933"
+      "color": "#99bbff"
     },
     {
       "id": "id6",
       "title": "Sixth note",
       "description": "This is the description for the sixth note",
       "categoryId": "3",
-      "color": "#ff9933"
+      "color": "#99bbff"
     },
     {
       "id": "id7",
       "title": "Seventh note",
       "description": "This is the description for the seventh note",
       "categoryId": "1",
-      "color": "#ff9933"
+      "color": "#99bbff"
     },
     {
       "id": "id8",
       "title": "Eighth note",
       "description": "This is the description for the eighth note",
       "categoryId": "2",
-      "color": "#ff9933"
+      "color": "#99bbff"
     },
     {
       "id": "id9",
       "title": "Ninth note",
       "description": "This is the description for the ninth note",
       "categoryId": "1",
-      "color": "#ff9933"
+      "color": "#99bbff"
     },
     {
       "id": "id10",
       "title": "Tenth note",
       "description": "This is the description for the tenth note",
       "categoryId": "3",
-      "color": "#ff9933"
+      "color": "#99bbff"
     },
     {
       "id": "id11",
       "title": "Eleventh note",
       "description": "This is the description for the eleventh note",
       "categoryId": "1",
-      "color": "#ff9933"
+      "color": "#99bbff"
     },
     {
       "id": "id12",
       "title": "Twelfth note",
       "description": "This is the description for the twelfth note",
       "categoryId": "2",
-      "color": "#ff9933"
+      "color": "#99bbff"
     }
   ]
   
