@@ -37,7 +37,7 @@ export class AddNoteComponent implements OnInit{
       if(!this.addMode)
       {this._activatedRoute.params.subscribe(parameter => 
         {
-          this.noteService.getNote(parameter['id']).subscribe(((notes:Note[])=>toEditNote=notes[0]))
+          this.noteService.getNote(parameter['id']).subscribe((note:Note)=>toEditNote=note)
 
           toEditNote.id= parameter['id'];
           this.title=toEditNote.title;
@@ -62,10 +62,10 @@ export class AddNoteComponent implements OnInit{
       description: this.description,
       categoryId: this.selected,
       color:"#ccccff"
-     
     }
 
     this.noteService.editNote(noteId,note).subscribe();
+    console.log(note);
   }
  
   AddNote()
