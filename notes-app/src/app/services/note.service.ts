@@ -27,9 +27,24 @@ export class NoteService {
     return this.httpClient.get<Note[]>(this.baseUrl+'/notes', this.httpOptions);
   }
 
+  getNote(noteId: string)
+  {
+     return this.httpClient.get<Note[]>(this.baseUrl+'/notes', this.httpOptions).pipe(map((notes:Note[])=>notes.filter(note => note.id===noteId)));
+  }
+
   getFilterNotes(categId:string)
   {
     return this.httpClient.get<Note[]>(this.baseUrl+'/notes', this.httpOptions).pipe(map((notes:Note[])=>notes.filter(note => note.categoryId===categId)));
+  }
+
+  getSearchedNotes(inputSearch:string)
+  {
+    return this.httpClient.get<Note[]>(this.baseUrl+'/notes', this.httpOptions).pipe(map((notes:Note[])=>notes.filter(nota => nota.title.includes(inputSearch)||nota.description.includes(inputSearch))));
+  }
+
+  getFilterSearchedNotes(categId:string,inputSearch:string)
+  {
+    return this.httpClient.get<Note[]>(this.baseUrl+'/notes', this.httpOptions).pipe(map((notes:Note[])=>notes.filter(nota => (nota.title.includes(inputSearch)||nota.description.includes(inputSearch) && nota.categoryId===categId))));
   }
 
   addNote(note: Note)
@@ -37,10 +52,14 @@ export class NoteService {
     return this.httpClient.post(this.baseUrl+'/notes',note,this.httpOptions)
   }
 
-  deleteNote(noteId:string)
-  {
-    return this.httpClient.get<Note[]>(this.baseUrl+'/notes', this.httpOptions).pipe(map((notes:Note[])=>notes.filter(note => note.id!==noteId)));
+  editNote(noteId:string, note: Note) {
+    return this.httpClient.put(this.baseUrl + "/notes/" + noteId, note ,this.httpOptions)
   }
+
+  // deleteNote(noteId:string)
+  // {
+  //   return this.httpClient.get<Note[]>(this.baseUrl+'/notes', this.httpOptions).pipe(map((notes:Note[])=>notes.filter(note => note.id!==noteId)));
+  // }
 
 
   //code before http

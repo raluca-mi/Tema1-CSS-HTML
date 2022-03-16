@@ -1,6 +1,7 @@
 <body  class="add-note-body-form">
     <div id="all">
-    <h1 class="title-form">Add a note</h1>
+        <h1 *ngIf="addMode" class="title-form">Add a note</h1>
+        <h1 *ngIf="!addMode" class="title-form">Edit note</h1>
 
     <label>Title</label>
 
@@ -39,7 +40,8 @@
         
         <br>
 
-        <button mat-raised-button [disabled]="f.invalid" (click)="AddNote()" routerLink="">Add</button>  
+        <button *ngIf="addMode" mat-raised-button [disabled]="f.invalid" (click)="AddNote()" routerLink="">Add</button> 
+        <button *ngIf="!addMode" mat-raised-button (click)="EditNote(id)" routerLink="">Save changes</button>  
     </div>
 </body>
   

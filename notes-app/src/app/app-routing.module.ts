@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 const routes: Routes = [
   { path: "", component: HomeComponent, pathMatch:"full" },
   { path: "add-note", component: AddNoteComponent},
+  { path: "add-note/:id", component: AddNoteComponent},
   { path: ":id", component: DummyComponent},
   
   { path: '**', redirectTo: ''}

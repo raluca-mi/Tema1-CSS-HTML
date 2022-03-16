@@ -21,13 +21,20 @@ ngOnInit(): void {
 }
 
 ngOnChanges(): void {
+  if(this.selectedCategoryId)
   this.noteService.getFilterNotes(this.selectedCategoryId).subscribe((notes:Note[])=>this.notes=notes)
+
+  if(this.inputSearch)
+  this.noteService.getSearchedNotes(this.inputSearch).subscribe((notes:Note[])=>this.notes=notes)
+
+  if(this.inputSearch && this.selectedCategoryId)
+  this.noteService.getFilterSearchedNotes(this.selectedCategoryId, this.inputSearch).subscribe((notes:Note[])=>this.notes=notes)
 }
 
-DeleteNote(noteId: string)
-{
-  this.noteService.deleteNote(noteId).subscribe((notes:Note[])=>this.notes=notes)
-}
+// DeleteNote(noteId: string)
+// {
+//   this.noteService.deleteNote(noteId).subscribe((notes:Note[])=>this.notes=notes)
+// }
 
   //code before http
 
