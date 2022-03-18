@@ -26,9 +26,14 @@ export class NoteService {
     return this.httpClient.get<Note[]>(this.baseUrl+'/notes', this.httpOptions);
   }
 
+  // getNote(noteId: string)
+  // {
+  //    return this.httpClient.get<Note[]>(this.baseUrl+'/notes', this.httpOptions).pipe(map((notes:Note[])=>notes.filter(note => note.id===noteId)[0]));
+  // }
+  
   getNote(noteId: string)
   {
-     return this.httpClient.get<Note[]>(this.baseUrl+'/notes', this.httpOptions).pipe(map((notes:Note[])=>notes.filter(note => note.id===noteId)[0]));
+     return this.httpClient.get<Note[]>(this.baseUrl+'/notes', this.httpOptions).pipe(map((notes:Note[])=>notes.find(note => note.id===noteId)));
   }
  
   getFilterNotes(categId:string)
