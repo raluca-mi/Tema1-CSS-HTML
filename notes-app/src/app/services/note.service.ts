@@ -8,7 +8,7 @@ import { Note } from '../note';
 })
 export class NoteService {
 
-  readonly baseUrl= "https://localhost:4200";
+  readonly baseUrl= "https://localhost:44319/notes";
   readonly httpOptions = {
     headers: new HttpHeaders({
       'Content-Type':  'application/json',
@@ -23,7 +23,7 @@ export class NoteService {
 
   getNotes():Observable<Note[]>
   {
-    return this.httpClient.get<Note[]>(this.baseUrl+'/notes', this.httpOptions);
+    return this.httpClient.get<Note[]>(this.baseUrl, this.httpOptions);
   }
 
   // getNote(noteId: string)
@@ -33,32 +33,32 @@ export class NoteService {
   
   getNote(noteId: string)
   {
-     return this.httpClient.get<Note[]>(this.baseUrl+'/notes', this.httpOptions).pipe(map((notes:Note[])=>notes.find(note => note.id===noteId)));
+     return this.httpClient.get<Note[]>(this.baseUrl+"/add-note/"+noteId, this.httpOptions).pipe(map((notes:Note[])=>notes.find(note => note.id===noteId)));
   }
  
   getFilterNotes(categId:string)
   {
-    return this.httpClient.get<Note[]>(this.baseUrl+'/notes', this.httpOptions).pipe(map((notes:Note[])=>notes.filter(note => note.categoryId===categId)));
+    return this.httpClient.get<Note[]>(this.baseUrl, this.httpOptions).pipe(map((notes:Note[])=>{if(categId ==="") {return notes;}return notes.filter(note => note.categoryId===categId)}));
   }
 
   getSearchedNotes(inputSearch:string)
   {
-    return this.httpClient.get<Note[]>(this.baseUrl+'/notes', this.httpOptions).pipe(map((notes:Note[])=>notes.filter(nota => nota.title.includes(inputSearch)||nota.description.includes(inputSearch))));
+    return this.httpClient.get<Note[]>(this.baseUrl, this.httpOptions).pipe(map((notes:Note[])=>notes.filter(nota => nota.title.includes(inputSearch)||nota.description.includes(inputSearch))));
   }
 
   getFilterSearchedNotes(categId:string,inputSearch:string)
   {
-    return this.httpClient.get<Note[]>(this.baseUrl+'/notes', this.httpOptions).pipe(map((notes:Note[])=>notes.filter(nota => ((nota.title.includes(inputSearch)||nota.description.includes(inputSearch)) && nota.categoryId===categId))));
+    return this.httpClient.get<Note[]>(this.baseUrl, this.httpOptions).pipe(map((notes:Note[])=>notes.filter(nota => ((nota.title.includes(inputSearch)||nota.description.includes(inputSearch)) && nota.categoryId===categId))));
   }
 
   addNote(note: Note)
   { 
-    return this.httpClient.post(this.baseUrl+'/notes',note,this.httpOptions)
+    return this.httpClient.post(this.baseUrl,note,this.httpOptions)
   }
 
   editNote(noteId:string, note: Note) 
   {
-    return this.httpClient.put(this.baseUrl + "/notes/" + noteId, note ,this.httpOptions)
+    return this.httpClient.put(this.baseUrl + "/" + noteId, note ,this.httpOptions)
   }
 
 

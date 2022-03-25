@@ -57,7 +57,6 @@ export class AddNoteComponent implements OnInit{
   EditNote(noteId)
   {
     let note: Note = { 
-      id: noteId,
       title: this.title,
       description: this.description,
       categoryId: this.selected,
@@ -71,7 +70,6 @@ export class AddNoteComponent implements OnInit{
   AddNote()
   {
     const note: Note = {
-      id: "id:"+ (+this.notesNumber+1),
       title: this.title,
  	    description: this.description,
       categoryId: this.selected,

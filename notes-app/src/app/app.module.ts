@@ -20,7 +20,7 @@ import { HomeComponent } from './home/home.component';
 import { DummyComponent } from './dummy/dummy.component';
 import { SearchComponent } from './search/search.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { HttpMockApiInterceptor } from './services/http-mock-api.interceptor';
+import { NoteService } from './services/note.service';
 
 
 @NgModule({
@@ -49,12 +49,7 @@ import { HttpMockApiInterceptor } from './services/http-mock-api.interceptor';
     CommonModule,
     HttpClientModule
   ],
-  providers: [{
-    provide: HTTP_INTERCEPTORS,
-    useClass: HttpMockApiInterceptor,
-    multi: true
-  }
-],
+  providers: [NoteService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
