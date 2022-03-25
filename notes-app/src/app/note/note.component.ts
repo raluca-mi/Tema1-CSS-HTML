@@ -37,27 +37,4 @@ ngOnChanges(): void {
   console.log("note with id: "+noteId+" has been deleted");
   this.noteService.getNotes().subscribe((notes: Note[])=>{this.notes=notes;});
 }
-
-  //code before http
-
-  // ngOnInit(): void {
-  //   this.noteService.serviceCall();
-  //   this.notes=this.noteService.getNotes();
-  // }
-
-  // ngOnChanges():void{
-
-  //   if(this.selectedCategoryId)
-  //   this.notes = this.noteService.getFiltredNotes(this.selectedCategoryId);     
-    
-  //   if(this.inputSearch)
-  //   this.notes = this.noteService.getSearchedTitle(this.inputSearch);
-
-  //   if(this.selectedCategoryId && this.inputSearch)
-  // {
-  //   this.notes = this.noteService.getFiltredByCategTitle(this.selectedCategoryId,this.inputSearch);
-  // }
-  // }
-  
-
 }

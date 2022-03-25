@@ -37,21 +37,18 @@ export class AddNoteComponent implements OnInit{
       if(!this.addMode)
       {this._activatedRoute.params.subscribe(parameter => 
         {
-          this.noteService.getNote(parameter['id']).subscribe((note:Note)=>toEditNote=note)
-
+          this.noteService.getNote(parameter['id']).subscribe((note:Note)=>{
+          toEditNote=note;
           toEditNote.id= parameter['id'];
           this.title=toEditNote.title;
           this.description=toEditNote.description;
-          this.selected=toEditNote.categoryId;
+          this.selected=toEditNote.categoryId;})
         }
        
       );}
       
     this.categories=this.filterService.getFilters();
 
-    //get the current number of notes
-    this.noteService.getNotes().subscribe((notes: Note[])=>{this.notes=notes;});
-    this.notesNumber=this.notes.length.toString();
   }
 
   EditNote(noteId)
@@ -77,9 +74,6 @@ export class AddNoteComponent implements OnInit{
     };
 
     this.noteService.addNote(note).subscribe();
-    
-    //code before http
-    //this.noteService.addNote(this.title,this.description, this.selected);
   }
 
 }

@@ -15,7 +15,7 @@ export class NoteService {
     })
   };
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) {}
 
   serviceCall() {
     console.log("Note service was called");
@@ -25,15 +25,10 @@ export class NoteService {
   {
     return this.httpClient.get<Note[]>(this.baseUrl, this.httpOptions);
   }
-
-  // getNote(noteId: string)
-  // {
-  //    return this.httpClient.get<Note[]>(this.baseUrl+'/notes', this.httpOptions).pipe(map((notes:Note[])=>notes.filter(note => note.id===noteId)[0]));
-  // }
   
   getNote(noteId: string)
   {
-     return this.httpClient.get<Note[]>(this.baseUrl+"/add-note/"+noteId, this.httpOptions).pipe(map((notes:Note[])=>notes.find(note => note.id===noteId)));
+     return this.httpClient.get<Note[]>(this.baseUrl, this.httpOptions).pipe(map((notes:Note[])=>notes.find(note => note.id===noteId)));
   }
  
   getFilterNotes(categId:string)
